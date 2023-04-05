@@ -1,12 +1,12 @@
 sudo qemu-system-x86_64 \
-  -m {ram}G \
+  -m 4G \
   -cpu core2duo \
   -boot order=d \
-  -drive file={command}.iso,media=cdrom \
-  -drive file={command}.img,format=raw \
+  -drive file=android.iso,media=cdrom \
+  -drive file=android.img,format=raw \
   -drive file=virtio-win.iso,media=cdrom \
   -device rtl8139,netdev=n0 -netdev user,id=n0 \
   -device usb-tablet \
   -vnc :0 \
-  -smp cores={core} \
+  -smp cores=2 \
   -accel tcg,thread=multi \
