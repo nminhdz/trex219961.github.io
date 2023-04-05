@@ -6,6 +6,7 @@ sudo qemu-system-x86_64 \
   -drive file=android.img,format=raw \
   -drive file=virtio-win.iso,media=cdrom \
   -device rtl8139,netdev=n0 -netdev user,id=n0 \
+  -device usb-ehci,id=usb,bus=pci.0,addr=0x4 \
   -device usb-tablet \
   -vnc :0 \
   -smp cores=2 \
